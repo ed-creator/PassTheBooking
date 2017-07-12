@@ -1,0 +1,7 @@
+bintrees==2.0.7
+Django==1.11.3
+pytz==2017.2
+requests==2.13.0
+six==1.10.0
+WebTest==2.0.16
+django-webtest==1.7.7
