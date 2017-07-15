@@ -1,10 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from django.http import Http404, HttpResponse
+from .models import Client
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-# Create your views here.
+    current_user = request.user
+    context = {
+        'current_user': current_user,
+    }
+    return render(request, 'client/index.html', context)
 
+# doesnt make sense this view should not exist
 def detail(request, client_id):
-    return HttpResponse("You're looking at client %s." % client_id)
+    current_user = get_object_or_404(Client, pk=client_id)
+    return render(request, 'client/detail.html', {'current_user': current_user})

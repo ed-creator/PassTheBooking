@@ -1,0 +1,7 @@
+{% if user_logged_in %}
+
+    <h2>Hello {{ current_user }} {{ current_user.lastname }}</h2>
+
+{% else %}
+    <p>Login Placeholder</p>
+{% endif %}
